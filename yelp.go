@@ -44,13 +44,16 @@ type YelpBusiness struct {
 	Rating      float32 `json:"rating"`
 	ReviewCount int     `json:"review_count"`
 	Location    struct {
-		Address       []string    `json:"address"`
-		City          string      `json:"city"`
-		State         string      `json:"state_code"`
-		PostalCode    string      `json:"postal_code"`
-		Country       string      `json:"country_code"`
-		Neighborhoods []string    `json:"neighborhoods"`
-		Coordinate    GeoLocation `json:"coordinate"`
+		Address       []string `json:"address"`
+		City          string   `json:"city"`
+		State         string   `json:"state_code"`
+		PostalCode    string   `json:"postal_code"`
+		Country       string   `json:"country_code"`
+		Neighborhoods []string `json:"neighborhoods"`
+		Coordinate    struct {
+			Lat float64 `json:"latitude"`
+			Lng float64 `json:"longitude"`
+		} `json:"coordinate"`
 	} `json:"location"`
 	Phone      string     `json:"phone"`
 	Url        string     `json:"url"`
